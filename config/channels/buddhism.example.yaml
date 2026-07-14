@@ -1,0 +1,45 @@
+# 频道配置模板（复制为 <channel>.yaml 后填写）
+channel_id: buddhism
+niche: buddhist_wisdom          # 对应 corpus/buddhist_wisdom/
+language: en
+
+competitors:                    # M0 只抓元数据
+  - https://www.youtube.com/@example1
+  # ... 共 10 个，标准见 ROADMAP P0
+
+script:
+  words: [1500, 2200]
+  # 风格指南：只写例句，不写形容词（如需调整风格 = 换例句）
+  style_examples:
+    - "You have been carrying that weight for years. Tonight, you can finally set it down."
+    - "The Buddha did not ask you to believe him. He asked you to look."
+    - "Notice what happens in your body when you read these words slowly."
+  hook_patterns:                # 前5秒 Hook 句式（从 M0 情报中提炼后更新）
+    - question              # "What if the thing you fear losing... was never yours?"
+    - counterintuitive      # "Letting go is not giving up. It is the opposite."
+  banned_words: [graphic, gore, suicide, terrorist]   # 广告适投性黑名单，持续补充
+
+tts:
+  engine: edge
+  voice: en-US-AndrewNeural
+  rate: "-8%"                   # 略慢，冥想感
+
+images:
+  provider: gemini              # gemini | cloudflare | runware
+  fallback: cloudflare
+  style_prefix: "Serene cinematic digital painting, soft golden light, misty mountain temple atmosphere,"
+  style_suffix: "muted warm palette, no text, no words, no watermark"
+  soften_map:                   # 敏感词软化（生图内容审核规避）
+    death: "the end of a long journey"
+    hell: "a vast shadowed valley"
+    judgment: "a moment of great stillness"
+
+thumbnail:
+  max_words: 4
+  font: Bebas Neue
+  text_color: "#FFD966"
+  outline_color: "#000000"
+
+publish:
+  schedule_et: "19:30"          # 美东晚间黄金档
+  daily_limit: 2                # 新频道硬限，YPP 通过后可调
