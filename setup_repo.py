@@ -33,8 +33,11 @@ r2 = subprocess.run(["git", "-c", "user.name=Ravi", "-c", "user.email=pnt01@foxm
 print("Commit:", r2.stdout.strip()[:100] or r2.stderr.strip()[:100])
 
 # Push
-subprocess.run(["git", "remote", "add", "origin", 
-                f"https://oauth2:{token}@github.com/shileibiz/youtube-auto.git"],
+f2 = open("/tmp/gh_token")
+tok2 = f2.read().strip()
+f2.close()
+subprocess.run(["git", "remote", "add", "origin",
+                f"https://oauth2:{tok2}@github.com/shileibiz/youtube-auto.git"],
                capture_output=True)
 r3 = subprocess.run(["git", "push", "-u", "origin", "main"],
                     capture_output=True, text=True, timeout=30)
