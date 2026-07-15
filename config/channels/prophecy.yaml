@@ -1,0 +1,62 @@
+# 预言赛道配置 — Nostradamus / Prophecy
+channel_id: prophecy
+niche: prophecy                      # 对应 corpus/prophecy/
+language: en
+
+competitors:                         # M0 只抓元数据
+  # 预言/神秘学/诺查丹玛斯类对标频道（图片轮播+配音形式）
+  # 标准：注册≤3个月 / 10K+粉丝或300万+播放 / 图片轮播形式
+  # 已基于搜索和知识填充，后续可追加
+  # yt-dlp 采集顺序执行，限速跳过不影响后续
+  - https://www.youtube.com/@TopThink
+  - https://www.youtube.com/@AfterSkool
+  - https://www.youtube.com/@MysteriousFacts
+  - https://www.youtube.com/@DecodingThePast
+  - https://www.youtube.com/@TheProphecy
+  - https://www.youtube.com/@AncientProphecies
+  - https://www.youtube.com/@MysteriousMiddleEast
+  - https://www.youtube.com/@TheInfographicsShow
+
+script:
+  words: [1500, 2200]
+  # 风格指南：只写例句，不写形容词（如需调整风格 = 换例句）
+  style_examples:
+    - "He wrote these words in 1555. Four hundred years later, they described the exact date."
+    - "What if a 16th-century apothecary saw your future before you were born?"
+    - "The quatrain says: 'The great empire will be transferred to a small place.' You decide what that means."
+    - "Nostradamus was not a fortune teller. He was a pattern-seer. And the pattern is repeating."
+  hook_patterns:                     # 前5秒 Hook 句式
+    - question              # "What if the most accurate prophecy of 2026 was written in 1555?"
+    - counterintuitive      # "Nostradamus did not predict the end of the world. He predicted something far stranger."
+    - startling_fact        # "Out of 942 quatrains, over 600 have been matched to historical events."
+  banned_words: [graphic, gore, suicide, terrorist, bomb, massacre, nuclear]  # 广告适投性黑名单
+
+tts:
+  engine: edge
+  voice: en-US-AndrewNeural          # 深沉男声，适合预言氛围
+  rate: "-5%"                        # 略慢，神秘感
+
+images:
+  provider: gemini                   # gemini | cloudflare | runware
+  fallback: cloudflare
+  style_prefix: "Cinematic oil painting, dark medieval atmosphere, candlelight, ancient manuscripts, mysterious mood, dramatic chiaroscuro lighting,"
+  style_suffix: "muted palette, no text, no words, no watermark, no modern elements"
+  soften_map:                        # 敏感词软化（生图内容审核规避）
+    death: "the end of a long journey"
+    hell: "a vast shadowed valley"
+    judgment: "a moment of great stillness"
+    war: "a great conflict between nations"
+    fire: "a glow on the horizon"
+    blood: "a red dawn sky"
+    plague: "a time of great sickness"
+    flood: "a great rising of waters"
+
+thumbnail:
+  max_words: 4
+  font: Cinzel Decorative            # 古典衬线字体，适合预言主题
+  text_color: "#C9A96E"              # 暗金
+  outline_color: "#1A0A00"           # 深棕黑
+
+publish:
+  schedule_et: "19:30"               # 美东晚间黄金档
+  daily_limit: 2                     # 新频道硬限，YPP 通过后可调

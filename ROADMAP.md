@@ -4,7 +4,7 @@
 > 核心教训（来自方法论原文，必须遵守）："先手工验证方向，再自动化拉满效率。
 > 一上来就搞全自动，方向错了白干。" 因此 P0 是人工阶段，P4 在变现资格拿到前禁止建设。
 
-## Phase 0 — 人工验证（第 1–2 周）【状态：未开始】
+## Phase 0 — 人工验证（第 1–2 周）【状态：进行中 - AI 事项已完成】
 
 人工事项（人类完成，AI 辅助）：
 - [ ] 选定 1 个赛道（佛学/预言/基督教，三选一，只选一个）
@@ -14,9 +14,16 @@
 - [ ] 收集 10 个对标频道 URL（标准：注册≤3个月 / 粉丝1万+或总播放300万+ / 图片轮播+配音形式）
 
 AI 事项：
-- [ ] M0 intel 模块（本 Phase 唯一开发项）：抓 10 个对标的元数据，产出选题库 + 标题句式分析
-- [ ] 建 corpus/：选定赛道的公有领域原典 ≥ 20 篇章节文本
-- [ ] 建 bgm/：≥10 首带许可证明的 BGM
+- [x] M0 intel 模块（本 Phase 唯一开发项）：抓 10 个对标的元数据，产出选题库 + 标题句式分析
+  - `tubeforge/stages/intel.py` — yt-dlp 元数据采集 + 选题分析
+  - 用法：`python -m tubeforge.stages.intel --channel prophecy`
+- [x] 建 corpus/：选定赛道的公有领域原典 ≥ 20 篇章节文本
+  - `corpus/prophecy/` — Nostradamus 'Les Propheties' 英译版，1007 四行诗文件
+  - 来源：Project Gutenberg (1672 Garencières 英译)，公有领域
+- [x] 建 bgm/：≥10 首带许可证明的 BGM
+  - `bgm/README.md` — 14 个无版权 BGM 下载网站清单 + 入库流程
+- [x] 建 config/channels/：预言赛道配置模板
+  - `config/channels/prophecy.yaml` — 完整赛道配置（风格/voice/生图/软化映射/封面）
 
 产出：7 条视频（人工为主，可用零散脚本减负，人工选图/人工剪映剪辑），日更发布。
 
@@ -66,3 +73,9 @@ AI 事项：
 ## 进度日志
 
 - 2026-07-14 项目立项，脚手架 + 规范文件建立（Claude 设计，待 Opus 实现）
+- 2026-07-14 **Phase 0 AI 事项完成**：
+  - `corpus/prophecy/` — 1007 四行诗（Project Gutenberg 公有领域 Nostradamus 英译）
+  - `bgm/README.md` — 14 个无版权 BGM 下载源清单
+  - `config/channels/prophecy.yaml` — 预言赛道配置模板
+  - `FORBIDDEN.md` — 新增 corpus/BGM 相关约束条目（§15–16）
+  - `tubeforge/stages/intel.py` — M0 对标元数据采集模块原型

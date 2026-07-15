@@ -1,0 +1,8 @@
+BGM: bgm_03_deep_drone.wav
+Source: FFmpeg-generated (lavfi sine + anoisesrc)
+Description: 60-second deep drone (55Hz sub-bass sine) with brown noise, meditative atmosphere
+License: CC0 1.0 Universal (generated synthetic audio, no copyright)
+Creator: FFmpeg lavfi filter (synthetic generation)
+Attribution required: No
+Generated on: 2026-07-16
+Suitable for: Deep ambient background suitable for mystery/contemplation videos

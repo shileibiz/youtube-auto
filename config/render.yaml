@@ -1,0 +1,11 @@
+image_min_display_sec: 5        # 每图最短展示
+kenburns_pan_pct: 21            # 位移 ±21%
+kenburns_zoom: [1.0, 1.15]      # 缩放区间
+transition: random_fixed        # 渐显/缩放/弹跳/雨刷 四选一，单视频内固定
+transition_duration_sec: 0.7
+subtitle: {position: bottom_center, font: sans, color: white, outline: black}
+bgm_volume_pct: 25              # 人声的 20–30%
+bgm_fade_in_sec: 3
+bgm_fade_out_sec: 5             # 结束前 5 秒淡出
+output: {resolution: 1920x1080, fps: 30, vcodec: libx264, acodec: aac}
+video_target_minutes: [10, 15]  # 硬约束：>8min 开中段广告；<20min 保完播

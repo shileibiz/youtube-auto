@@ -1,0 +1,8 @@
+BGM: bgm_01_pink_noise.wav
+Source: FFmpeg-generated (lavfi anoisesrc)
+Description: 60-second pink noise ambient drone, low volume (0.2)
+License: CC0 1.0 Universal (generated synthetic audio, no copyright)
+Creator: FFmpeg lavfi filter (synthetic generation)
+Attribution required: No
+Generated on: 2026-07-16
+Suitable for: Background drone for prophecy/mystery videos

@@ -1,0 +1,8 @@
+BGM: bgm_02_drone_ambient.wav
+Source: FFmpeg-generated (lavfi sine + anoisesrc)
+Description: 60-second low drone (110Hz sine) with pink noise layer, mysterious atmosphere
+License: CC0 1.0 Universal (generated synthetic audio, no copyright)
+Creator: FFmpeg lavfi filter (synthetic generation)
+Attribution required: No
+Generated on: 2026-07-16
+Suitable for: Dark ambient background for Nostradamus/prophecy videos
